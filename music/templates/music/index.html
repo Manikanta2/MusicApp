@@ -1,15 +1,6 @@
-{% load staticfiles %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+{% extends 'music/base.html' %}
 
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'music:index' %}">Slosh</a>
-        </div>
-    </div>
-</nav>
-
+{% block body %}
 {%  if all_albums %}
     <h3>Here are all my albums</h3>
 <ul>
@@ -20,3 +11,4 @@
 {% else %}
     <h3>You don't have any albums</h3>
 {% endif %}
+{% endblock %}
